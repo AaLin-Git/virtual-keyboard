@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+.main__keyboard {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: rgb(250, 245, 240);
+}
+
+.keyboard__row {
+  display: flex;
+  column-gap: 10px;
+}
+
+.keyboard__key {
+   width: 40px;
+   height: 40px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 1px solid #f8c77e;
+   border-radius: 3px;
+   background-color: #ffebcd;
+}
+
+.keyboard__key_highlight {
+  border-radius: 10px;
+  background-color: #fcf7ef;
+}
+
+.keyboard__key_wide {
+  width: 90px;
+}
