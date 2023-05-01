@@ -9,6 +9,8 @@ const initApp = () => {
   const header = createHeader(body);
   const main = createMain(body);
 
+  const monitor = document.querySelector('.monitor__text');
+
   const activateKey = (event) => {
     console.log(event.code);
     document.querySelector(`.${event.code}`).classList.add('keyboard__key_highlight');
@@ -16,10 +18,24 @@ const initApp = () => {
 
   const deactivateKey = (event) => {
     document.querySelector(`.${event.code}`).classList.remove('keyboard__key_highlight');
-
   };
+
+  const printText = (event) => {
+    //const currentKey = document.querySelector(`.${event.code}`);
+    console.log(event.code);
+    let text = monitor.textContent;
+    if (event.code === 'Enter') {
+      monitor.textContent += '\n';
+    } else if (event.code === 'Backspace') {
+      monitor.textContent = monitor.textContent;
+    } else {
+      monitor.textContent += `${event.key}`;
+    }
+    console.log(monitor.value);
+  }
 
   body.addEventListener('keydown', activateKey);
   body.addEventListener('keyup', deactivateKey);
+  body.addEventListener('keypress', printText);
 }
 initApp();
