@@ -36,6 +36,10 @@ export const createKeyboard = (parent) => {
       key.classList.add('keyboard__key_wide');
     }
 
+    if (data.code === 'Space') {
+      key.classList.add('keyboard__key_space');
+    }
+
     return key;
   }
 
