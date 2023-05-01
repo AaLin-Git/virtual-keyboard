@@ -26,11 +26,16 @@ export const createKeyboard = (parent) => {
 
   container.append(firstRow, secondRow, thirdRow, fourthRow, fifthRow);
 
-  const createKey = data => {
+  const createKeyEn = data => {
     const key = createElement('div', {
-      className: `keyboard__key ${data.code}`,
-      textContent: data.en,
+        className: `keyboard__key ${data.code}`,
     });
+    
+    if (container.classList.contains('ru')) {
+      key.textContent = data.ru;
+    } else {
+      key.textContent = data.en;
+    }
 
     if (data.code === 'Backspace' || data.code === 'CapsLock' || data.code === 'Enter' || data.code === 'ShiftLeft' || data.code === 'ShiftRight') {
       key.classList.add('keyboard__key_wide');
@@ -43,11 +48,11 @@ export const createKeyboard = (parent) => {
     return key;
   }
 
-  const firstKeysArr = firstRowKeys.map(createKey);
-  const secondKeysArr = secondRowKeys.map(createKey);
-  const thirdKeysArr = thirdRowKeys.map(createKey);
-  const fourthKeysArr = fourthRowKeys.map(createKey);
-  const fifthKeysArr = fifthRowKeys.map(createKey);
+  const firstKeysArr = firstRowKeys.map(createKeyEn);
+  const secondKeysArr = secondRowKeys.map(createKeyEn);
+  const thirdKeysArr = thirdRowKeys.map(createKeyEn);
+  const fourthKeysArr = fourthRowKeys.map(createKeyEn);
+  const fifthKeysArr = fifthRowKeys.map(createKeyEn);
 
   firstRow.append(...firstKeysArr);
   secondRow.append(...secondKeysArr);

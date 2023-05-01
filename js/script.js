@@ -10,32 +10,35 @@ const initApp = () => {
   const main = createMain(body);
 
   const monitor = document.querySelector('.monitor__text');
+  const keyboard = document.querySelector('.main__keyboard');
 
   const activateKey = (event) => {
-    console.log(event.code);
+    if (event.getModifierState('CapsLock') || event.getModifierState('Shift')) {
+      document.querySelectorAll('.keyboard__key').forEach((key) => {
+        key.classList.add('letter-key');
+      })
+    }
     document.querySelector(`.${event.code}`).classList.add('keyboard__key_highlight');
   };
 
   const deactivateKey = (event) => {
+    if (!event.getModifierState('CapsLock') || !event.getModifierState('Shift')) {
+      document.querySelectorAll('.keyboard__key').forEach((key) => {
+        key.classList.remove('letter-key');
+      })
+    }
     document.querySelector(`.${event.code}`).classList.remove('keyboard__key_highlight');
   };
 
-  const printText = (event) => {
-    //const currentKey = document.querySelector(`.${event.code}`);
-    console.log(event.code);
-    let text = monitor.textContent;
-    if (event.code === 'Enter') {
-      monitor.textContent += '\n';
-    } else if (event.code === 'Backspace') {
-      monitor.textContent = monitor.textContent;
-    } else {
-      monitor.textContent += `${event.key}`;
+  const changeLang = (event) => {
+    if (event.ctrlKey && event.altKey) {
+      keyboard.classList.toggle('ru');
     }
-    console.log(monitor.value);
   }
+  body.addEventListener('keydown', changeLang);
 
   body.addEventListener('keydown', activateKey);
   body.addEventListener('keyup', deactivateKey);
-  body.addEventListener('keypress', printText);
+
 }
 initApp();
