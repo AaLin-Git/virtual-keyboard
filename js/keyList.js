@@ -138,8 +138,8 @@ export const secondRowKeys = [
     code: 'BracketRight',
   },
   {
-    en: '&bsol;',
-    ru: '&bsol;',
+    en: '\\',
+    ru: '\\',
     code: 'Backslash',
   },
   {
@@ -206,7 +206,7 @@ export const thirdRowKeys = [
     code: 'Semicolon',
   },
   {
-    en: '&rsquo;',
+    en: '\'',
     ru: 'э',
     code: 'Quote',
   },
@@ -274,8 +274,8 @@ export const fourthRowKeys = [
     code: 'Slash',
   },
   {
-    en: '&uarr;',
-    ru: '&uarr;',
+    en: '▲',
+    ru: '▲',
     code: 'ArrowUp',
   },
   {
@@ -312,18 +312,18 @@ export const fifthRowKeys = [
     code: 'AltRight',
   },
   {
-    en: '&larr;',
-    ru: '&larr;',
+    en: '◄',
+    ru: '◄',
     code: 'ArrowLeft',
   },
   {
-    en: '&darr;',
-    ru: '&darr;',
+    en: '▼',
+    ru: '▼',
     code: 'ArrowDown',
   },
   {
-    en: '&rarr;',
-    ru: '&rarr;',
+    en: '►',
+    ru: '►',
     code: 'ArrowRight',
   },
   {
