@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+}
+
+.header__title {
+  font-size: 30px;
+  text-align: center;
+  color: #fa7901;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main__monitor {
+  width: 912px;
+  height: 300px;
+  padding: 30px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  font-size: 20px;
+}
+
+.main__keyboard {
+  width: fit-content;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: rgb(250, 245, 240);
+}
+
+.keyboard__row {
+  display: flex;
+  column-gap: 10px;
+}
+
+.keyboard__key {
+   width: 50px;
+   height: 50px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 1px solid #f8c77e;
+   border-radius: 3px;
+   background-color: #ffebcd;
+}
+
+.keyboard__key_highlight {
+  border-radius: 10px;
+  background-color: #fcf7ef;
+}
+
+.keyboard__key_wide {
+  width: 110px;
+}
+
+.keyboard__key_space {
+  width: 410px;
+}
+
+.letter-key {
+  text-transform: capitalize;
+}
+
