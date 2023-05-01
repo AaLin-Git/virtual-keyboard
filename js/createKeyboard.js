@@ -28,7 +28,7 @@ export const createKeyboard = (parent) => {
 
   const createKey = data => {
     const key = createElement('div', {
-      className: "keyboard__key",
+      className: `keyboard__key ${data.code}`,
       textContent: data.en,
     });
 
