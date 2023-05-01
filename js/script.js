@@ -31,14 +31,14 @@ const initApp = () => {
     document.querySelector(`.${event.code}`).classList.remove('keyboard__key_highlight');
   };
 
-  const clickKey = (event) => {
-    document.querySelector(`.${event.target.classList[1]}`).classList.add('keyboard__key_highlight');
-    monitor.textContent += event.target.textContent;
-  };
+  // const clickKey = (event) => {
+  //   document.querySelector(`.${event.target}`).classList.add('keyboard__key_highlight');
+  //   monitor.textContent += event.target.textContent;
+  // };
 
-  const unclickKey = (event) => {
-    document.querySelector(`.${event.target.classList[1]}`).classList.remove('keyboard__key_highlight');
-  };
+  // const unclickKey = (event) => {
+  //   document.querySelector(`.${event.target}`).classList.remove('keyboard__key_highlight');
+  // };
 
   const changeLang = (event) => {
     if (event.ctrlKey && event.altKey) {
@@ -49,8 +49,8 @@ const initApp = () => {
 
   body.addEventListener('keydown', activateKey);
   body.addEventListener('keyup', deactivateKey);
-  body.addEventListener('mousedown', clickKey);
-  body.addEventListener('mouseup', unclickKey);
+  //body.addEventListener('mousedown', clickKey);
+  //body.addEventListener('mouseup', unclickKey);
 
 }
 initApp();
