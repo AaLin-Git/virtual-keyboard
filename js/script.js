@@ -9,8 +9,9 @@ const initApp = () => {
   const header = createHeader(body);
   const main = createMain(body);
 
-  const monitor = document.querySelector('.monitor__text');
   const keyboard = document.querySelector('.main__keyboard');
+  const monitor = document.querySelector('.main__monitor');
+  //monitor.style.background = 'red';
 
   const activateKey = (event) => {
     if (event.getModifierState('CapsLock') || event.getModifierState('Shift')) {
@@ -30,6 +31,15 @@ const initApp = () => {
     document.querySelector(`.${event.code}`).classList.remove('keyboard__key_highlight');
   };
 
+  const clickKey = (event) => {
+    document.querySelector(`.${event.target.classList[1]}`).classList.add('keyboard__key_highlight');
+    monitor.textContent += event.target.textContent;
+  };
+
+  const unclickKey = (event) => {
+    document.querySelector(`.${event.target.classList[1]}`).classList.remove('keyboard__key_highlight');
+  };
+
   const changeLang = (event) => {
     if (event.ctrlKey && event.altKey) {
       keyboard.classList.toggle('ru');
@@ -39,6 +49,8 @@ const initApp = () => {
 
   body.addEventListener('keydown', activateKey);
   body.addEventListener('keyup', deactivateKey);
+  body.addEventListener('mousedown', clickKey);
+  body.addEventListener('mouseup', unclickKey);
 
 }
 initApp();
